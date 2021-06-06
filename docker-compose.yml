@@ -7,7 +7,6 @@ services:
       - ./docker-entrypoint-aws.sh:/docker-entrypoint-initaws.d/docker-entrypoint-aws.sh
     ports:
       - '4566:4566'
-      - '8080:8080'
     env_file:
       - .env
 
