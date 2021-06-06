@@ -10,3 +10,12 @@ services:
       - '8080:8080'
     env_file:
       - .env
+
+  microservice1:
+    build: ./microservice1
+    working_dir: /var/www/
+    volumes:
+      - ./microservice1:/var/www/
+    ports:
+      - 8000:8000
+    command: php artisan serve --host=0.0.0.0 --port=8000
