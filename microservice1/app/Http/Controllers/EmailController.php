@@ -20,7 +20,7 @@ class EmailController
             ]);
             $SnsClient->publish([
                 'TopicArn' => 'arn:aws:sns:us-east-1:000000000000:poc-topic-emails',
-                'Message' => 'test'
+                'Message' => json_encode(['test' => true])
             ]);
         } catch(\Exception $e) {
             dd($e->getMessage());
