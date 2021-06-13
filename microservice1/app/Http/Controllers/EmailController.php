@@ -12,7 +12,7 @@ class EmailController
             $SnsClient = new SnsClient([
                 'region' => 'us-east-1',
                 'version' => '2010-03-31',
-                'endpoint' => 'http://192.168.48.1:4566/',
+                'endpoint' => 'http://172.20.0.1:4566/',
                 'credentials' => [
                     'key'    => "ACCESSKEYID",
                     'secret' => "SECRETACCESSKEY",
@@ -22,6 +22,7 @@ class EmailController
                 'TopicArn' => 'arn:aws:sns:us-east-1:000000000000:poc-topic-emails',
                 'Message' => json_encode(['test' => true])
             ]);
+            return true;
         } catch(\Exception $e) {
             dd($e->getMessage());
         }
